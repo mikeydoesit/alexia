@@ -1,38 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
-  text-align: center;
+  background-color: #000000;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#headerWrapper {
+  height: max-content;
+  padding: 0 28px;
+  animation: slideDown 0.7s linear;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 0;
+  animation: fade 3.5s linear;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header #center {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-width: 50vw;
+  max-width: 70vw;
+}
+header #center #logoWrapper {
+  padding-bottom: 14px;
+  letter-spacing: 7px;
+  font-weight: 600;
+}
+header #center nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-around;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+#homepage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#homepage #leftMain,
+#homepage #rightMain {
+  height: 100%;
+  width: 50%;
+}
+#homepage #leftMain {
+  background-image: url("./assets/img/yellow.jpg");
+  background-position: center;
+  background-size: cover;
+  animation: homepageLeftAnim 5s linear;
+}
+#homepage #rightMain {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transform: none;
+  transform: none;
+  will-change: transform;
+  z-index: 160;
+  pointer-events: auto;
+}
+#homepage #rightMain.menu--visible {
+  -webkit-transform: none;
+  transform: none;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+#homepage #rightMain.menu--animatable {
+  transition: all 260ms ease-in;
+}
+#homepage #rightMain.menu--animatable.menu--visible {
+  transition: all 660ms ease-out;
+}
+#homepage #rightMain img {
+  max-width: 70%;
 }
 
-@keyframes App-logo-spin {
+.menu--visible {
+  pointer-events: auto;
+}
+
+@keyframes fade {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
