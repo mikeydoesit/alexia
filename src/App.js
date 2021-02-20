@@ -14,6 +14,11 @@ class App extends Component {
     this.OnTransitionEnd = this.OnTransitionEnd.bind(this)
     this.changeView = this.changeView.bind(this)
   }
+componentDidMount() {
+  this.setState({
+    currentScent: Stocklist[Math.floor(Math.random() * 3)]
+  })
+}
 
 changeView(scent) {
   console.log(scent)
@@ -41,7 +46,12 @@ OnTransitionEnd() {
     return (
       <div className="App">
         <Header handleClick={this.changeView}/>
-        <Homepage viewProductDetails={this.toggleProductDetails} handleTransitionEnd={this.OnTransitionEnd} />
+        <Homepage 
+          viewProductDetails={this.toggleProductDetails} 
+          handleTransitionEnd={this.OnTransitionEnd} 
+          image={this.state.currentScent.imageURL} 
+          description={this.state.currentScent.description}
+        />
       </div>
     );
   }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Roboto+Condensed&family=Source+Sans+Pro:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +40,7 @@ header #center #logoWrapper {
   padding-bottom: 14px;
   letter-spacing: 7px;
   font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 header #center nav {
   width: 100%;
@@ -71,13 +74,15 @@ header #center nav {
 #homepage #rightMain {
   background-color: #ffffff;
   display: flex;
-  justify-content: center;
   align-items: center;
   -webkit-transform: none;
   transform: none;
   will-change: transform;
   z-index: 160;
   pointer-events: auto;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
 }
 #homepage #rightMain.menu--visible {
   -webkit-transform: none;
@@ -91,8 +96,20 @@ header #center nav {
 #homepage #rightMain.menu--animatable.menu--visible {
   transition: all 660ms ease-out;
 }
+
 #homepage #rightMain img {
-  max-width: 70%;
+  width: 15em;
+  height: 15em;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+#homepage #rightMain #mainDescription {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.8;
+  font-size: 0.9em;
+  padding: 28px 56px 63px 56px;
+  text-align: center;
 }
 
 .menu--visible {
