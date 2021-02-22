@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Homepage from "./Homepage";
-import Stocklist from './Stocklist';
+import Scents from './Scents';
 import './App.css';
+import ProductPage from './ProductPage';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentScent: {}
+      currentScent: {},
+      cart: []
     }
     this.toggleProductDetails = this.toggleProductDetails.bind(this)
     this.OnTransitionEnd = this.OnTransitionEnd.bind(this)
     this.changeView = this.changeView.bind(this)
+    this.addToCart = this.addToCart.bind(this)
+    this.deleteFromCart = this.deleteFromCart.bind(this)
   }
 componentDidMount() {
   this.setState({
-    currentScent: Stocklist[Math.floor(Math.random() * 3)]
+    currentScent: Scents[Math.floor(Math.random() * 3)]
   })
+}
+
+addToCart(SKU, quantity) {
+
+}
+
+deleteFromCart(SKU, quantity) {
+
 }
 
 changeView(scent) {
@@ -46,6 +58,13 @@ OnTransitionEnd() {
     return (
       <div className="App">
         <Header handleClick={this.changeView}/>
+        <ProductPage 
+          bgdColor={this.state.currentScent.color}
+          addToCart={this.addToCart} 
+          deleteFromCart={this.deleteFromCart} 
+          productName={this.state.currentScent.name} 
+          price={this.state.currentScent.price} 
+        />
         <Homepage 
           viewProductDetails={this.toggleProductDetails} 
           handleTransitionEnd={this.OnTransitionEnd} 

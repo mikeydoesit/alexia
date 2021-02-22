@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import Stocklist from './Stocklist';
+import Scents from './Scents';
 import Scent from './Scent';
 
 class Header extends Component {
@@ -10,7 +10,7 @@ class Header extends Component {
   }
 
   render() {
-    const scentList = Stocklist.map((scent, index) => {
+    const scentList = Scents.map((scent, index) => {
       return (
         <Scent key={index} name={scent.name} handleClick={() => this.props.handleClick(scent)} />
 
