@@ -20,7 +20,7 @@ class App extends Component {
   }
 componentDidMount() {
   this.setState({
-    currentScent: Scents[Math.floor(Math.random() * 3)]
+    currentScent: Scents[Math.floor(Math.random() * 15)]
   })
 }
 

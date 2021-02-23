@@ -7,11 +7,11 @@ class ProductPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            miniCart: {
                 price: null,
-                quantity: null
-            }
+                quantity: 0
         }
+        this.addOne = this.addOne.bind(this)
+        this.subtractOne = this.subtractOne.bind(this)
     }
     componentDidMount() {
         this.setState({
@@ -23,18 +23,32 @@ class ProductPage extends Component {
             price: price
         });
     }
+    addOne() {
+        const counter = this.state.quantity;
+        this.setState({
+            quantity: counter + 1
+        });
+    }
+    subtractOne() {
+        const counter = this.state.quantity;
+        this.setState({
+            quantity: counter - 1
+        });
+    }
 
     render() {
         const sizes = Sizes.map((size, index) => {
             return (
                 <div key={index} className="size" onClick={() => this.changePrice(size.price)}>
-                <input type="radio" name={size.size} value={size.size} />
-                <label htmlFor={size.size}>{size.size}</label>
+                    <label htmlFor={size.size}>
+                        <input type="radio" name="size" value={size.size} />
+                        <span className="checkmark">{size.size}</span>
+                    </label>
                 </div>
             )
         })
         return(
-            <div id="productPage" style={{backgroundColor: this.props.bgdColor}}>
+            <div id="productPage" style={{background: this.props.bgdColor}}>
                 <h1 id="productName">{this.props.productName + ' - Soy Wax Melts'}</h1>
                 <h4 id="price">{'$ ' + this.state.price}</h4>
                 <div id="sizeSelector">
@@ -47,9 +61,13 @@ class ProductPage extends Component {
                 <div id="quantitySelector">
                     <h5>QUANTITY</h5>
                     <div id="quantity">
-                        <FontAwesomeIcon icon={faMinus}/>
-                        <div>{this.props.counter}</div>
-                        <FontAwesomeIcon icon={faPlus}/>
+                        <FontAwesomeIcon icon={faMinus} onClick={() => {
+                            this.subtractOne()
+                        }}/>
+                        <div id="counter">{this.state.quantity}</div>
+                        <FontAwesomeIcon icon={faPlus} onClick={() => {
+                            this.addOne()
+                        }}/>
                     </div>
                 </div>
                 <div id="addToCart">
