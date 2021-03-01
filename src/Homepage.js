@@ -1,7 +1,7 @@
 const Homepage = (props) => {
     return (
         <div id="homepage">
-            <div id="leftMain"></div>
+            <div id="leftMain" style={{backgroundImage: 'url(' + props.background + ')'}}></div>
             <div id="rightMain" onTransitionEnd={props.handleTransitionEnd} onClick={props.viewProductDetails}>
                 <img alt='green melts' src={props.image} />
                 <p id="mainDescription">{props.description}</p>

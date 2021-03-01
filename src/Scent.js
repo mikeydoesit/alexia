@@ -1,6 +1,6 @@
 const Scent = (props) => {
     return (
-        <div onClick={props.handleClick}>{props.name}</div>
+        <div className="scent" onClick={props.handleClick}><img src={props.src}/></div>
     )
 }
 

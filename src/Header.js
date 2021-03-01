@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import Scents from './Scents';
-import Scent from './Scent';
+
 
 class Header extends Component {
   constructor(props) {
@@ -10,12 +9,6 @@ class Header extends Component {
   }
 
   render() {
-    const scentList = Scents.map((scent, index) => {
-      return (
-        <Scent key={index} name={scent.name} handleClick={() => this.props.handleClick(scent)} />
-
-      )
-    })
     return (
       <div id="headerWrapper">
         <header>
@@ -29,16 +22,11 @@ class Header extends Component {
               </h1>
             </div>
             <nav>
-              <div id="scentsMegaNav">
-                <div id="scentsHeader">
-                  Scents
-                </div>
-                <div id="scents">
-                  {scentList}
-                </div>
-              </div>
+              <a id="scentsHeader" onClick={this.props.toggleScents}>
+                Scents
+              </a>
               <a>
-                Blog
+                Vlog
               </a>
               <a>
                 About
