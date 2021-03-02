@@ -94,14 +94,14 @@ const Scents = [
         name: 'White Sands',
         color: 'rgb(241,195,50)',
         logoURL: 'images/whiteSands.png',
-        imageURLs: ['images/whiteSands1.png','images/whiteSands2.png','images/whiteSands3.png','images/whiteSands4.png'],
+        imageURLs: ['images/whiteSands1.jpeg','images/whiteSands2.jpeg','images/whiteSands3.jpeg','images/whiteSands4.png'],
         description: "This scent reminds me of my favourite paradise beach in Ghana 'White Sands'. This scent screams Ghana. Sunshine. Icecream, fresh pineapple & oranges and beaches with White Sands - sounds like paradise! For those who have been to Ghana, it has a similar scent to the delicious drink 'Tampico' a sweet orange punch"
     },
     {
         name: 'Bora Bora',
         color: 'linear-gradient(to bottom, #eeb928, #f79d87)',
         logoURL: 'images/bora.png',
-        imageURLs: ['images/bora1.png','images/bora2.png'],
+        imageURLs: ['images/bora1.jpeg','images/bora2.jpeg', 'images/bora3.jpeg'],
         description: "Pack your bags, grab your passports and your sunglasses, because we are going to... BORA BORA! Let's escape to the exotic beaches with a tasty cocktail in our hands! what are you waiting for? Come on... LET'S GO!"
     },
 ]
