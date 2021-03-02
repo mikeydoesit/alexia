@@ -18,7 +18,7 @@ class Header extends Component {
           <div id="center">
             <div id="logoWrapper">
               <h1 id="logo">
-                alexia
+                Created By Alexia
               </h1>
             </div>
             <nav>
