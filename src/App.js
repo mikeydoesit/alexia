@@ -26,7 +26,15 @@ componentDidMount() {
   })
 }
 
-addToCart(SKU, quantity) {
+addToCart(price, quantity, orderedScent) {
+  this.setState(prevState => ({
+    cart: [...prevState.cart, {
+      quantityReq: quantity,
+      price: price,
+      orderedScent: orderedScent
+    }]
+  }))
+  console.log(this.state.cart)
 
 }
 
@@ -77,10 +85,11 @@ OnTransitionEnd() {
         <Header toggleScents={this.toggleScents} />
         <ProductPage 
           bgdColor={this.state.currentScent.color}
-          addToCart={this.addToCart} 
+          add={this.addToCart} 
           deleteFromCart={this.deleteFromCart} 
           productName={this.state.currentScent.name} 
-          price={this.state.currentScent.price} 
+          price={this.state.currentScent.price}
+
         />
         <Homepage 
           viewProductDetails={this.toggleProductDetails}

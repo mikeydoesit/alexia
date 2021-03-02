@@ -70,7 +70,10 @@ class ProductPage extends Component {
                         }}/>
                     </div>
                 </div>
-                <div id="addToCart">
+                <div id="addToCart" onClick={() => {
+                    this.props.add(this.state.price, this.state.quantity, this.props.productName)
+                    }
+                }>
                     <span>ADD TO CART</span>
                 </div>
             </div>

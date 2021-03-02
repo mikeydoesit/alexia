@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const stripe = require('stripe')('sk_test_51IQIfJJfNX1td8eddAo5jfwhbl9s6mFyYGHcQB8JqCpQvwXX2AZiwgtSkdic8cCii9khHqwQFS6oWpktEzze4mf400lXqKri1v');
 const compression = require('compression');
 const app = express();
 app.use(compression());
