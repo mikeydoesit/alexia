@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Scents from './Scents';
 
 class Homepage extends Component {
     constructor(props) {
@@ -6,9 +7,15 @@ class Homepage extends Component {
     }
 
     render() {
+        const activebgdName = this.props.background
+        const heroSection = Scents.map((scent, index) => {
+            return (
+                <div key={index} className={`leftMain ${(scent.name === activebgdName)? 'active' : ''}`} style={{backgroundImage: 'url(' + scent.imageURLs[0] + ')'}}></div>
+            )
+        })
         return (
             <div id="homepage">
-                <div id="leftMain" style={{backgroundImage: 'url(' + this.props.background + ')'}}></div>
+                {heroSection}
                 <div id="rightMain" onTransitionEnd={this.props.handleTransitionEnd} onClick={this.props.viewProductDetails}>
                     <img alt='green melts' src={this.props.image} />
                     <p id="mainDescription">{this.props.description}</p>
