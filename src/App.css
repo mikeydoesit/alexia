@@ -117,7 +117,7 @@ header #center nav a {
     opacity: 0;
 	background-size: cover;
     right: 50%;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 #homepage #rightMain {
