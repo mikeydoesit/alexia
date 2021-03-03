@@ -35,7 +35,6 @@ addToCart(price, quantity, orderedScent) {
     }]
   }))
   console.log(this.state.cart)
-
 }
 
 deleteFromCart(SKU, quantity) {
@@ -93,7 +92,7 @@ OnTransitionEnd() {
         />
         <Homepage 
           viewProductDetails={this.toggleProductDetails}
-          background={this.state.currentScent.imageURLs[0]} 
+          background={this.state.currentScent.name} 
           handleTransitionEnd={this.OnTransitionEnd} 
           image={this.state.currentScent.imageURLs[Math.floor(Math.random() * (this.state.currentScent.imageURLs.length))]} 
           description={this.state.currentScent.description}
