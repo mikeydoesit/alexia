@@ -305,7 +305,9 @@ header #rightSide  {
 }
 
 #productPage #quantitySelector #quantity #counter {
-	padding: 0 49px
+	padding: 0 49px;
+	user-select: none;
+    -webkit-user-select: none;
 }
 
 #productPage #addToCart {
@@ -317,8 +319,9 @@ header #rightSide  {
 	font-size: .9rem;
 	letter-spacing: 2px;
 	font-family: 'Oswald', sans-serif;
-	font-weight: 300
-	
+	font-weight: 300;
+	user-select: none;
+    -webkit-user-select: none;
 }
 #checkoutWrapper {
 	padding: 1rem;
