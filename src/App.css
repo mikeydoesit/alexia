@@ -46,16 +46,15 @@ header #center {
 	max-width: 70vw
 }
 
-header #center #logoWrapper {
+header #leftSide #logoWrapper {
 	padding-bottom: 14px;
 	letter-spacing: 7px;
 	font-weight: 400;
 	font-family: 'Rozha One', serif
 }
-header #center #logoWrapper #logo{
+header #leftSide #logoWrapper #logo{
 	padding-bottom: 14px;
 	width: 15em;
-	height: 15em;
 	object-fit: contain;
 	object-position: center;
 }
@@ -76,6 +75,10 @@ header #center nav {
 header #center nav a {
 	cursor: pointer;
 	letter-spacing: 1px
+}
+header #rightSide  {
+	display: flex;
+	flex-direction: row;
 }
 
 #scents {

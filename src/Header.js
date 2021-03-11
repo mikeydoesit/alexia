@@ -13,12 +13,11 @@ class Header extends Component {
       <div id="headerWrapper">
         <header>
           <div id="leftSide">
-          <FontAwesomeIcon icon={faSearch}/>
-          </div>
-          <div id="center">
             <div id="logoWrapper">
               <img id="logo" src="images/new-logo.png" />
             </div>
+          </div>
+          <div id="center">
             <nav>
               <a id="scentsHeader" onClick={this.props.toggleScents}>
                 Scents
@@ -32,7 +31,8 @@ class Header extends Component {
             </nav>
           </div>
         <div id="rightSide">
-        <FontAwesomeIcon icon={faShoppingCart}/>
+          <FontAwesomeIcon icon={faSearch}/>
+          <FontAwesomeIcon icon={faShoppingCart}/>
         </div>
         
       </header>
