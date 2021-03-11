@@ -30,13 +30,15 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: center;
 	color: #030d44;
 	font-weight: 700;
 	padding: 14px 0;
 	animation: fade 3.5s linear
 }
-
+header #leftSide{
+	padding-top: 14px;
+}
 header #center {
 	display: flex;
 	flex-direction: column;
@@ -53,8 +55,7 @@ header #leftSide #logoWrapper {
 	font-family: 'Rozha One', serif
 }
 header #leftSide #logoWrapper #logo{
-	padding-bottom: 14px;
-	width: 15em;
+	width: 7em;
 	object-fit: contain;
 	object-position: center;
 }
