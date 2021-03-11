@@ -7,7 +7,8 @@ class ProductPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-                price: Sizes[Math.floor(Math.random() * 3)].price,
+                price: Sizes[0].price,
+                size: Sizes[0].size,
                 quantity: 0
         }
         this.addOne = this.addOne.bind(this)
@@ -15,12 +16,14 @@ class ProductPage extends Component {
     }
     componentDidMount() {
         this.setState({
-            price: Sizes[Math.floor(Math.random() * 3)].price
+            price: Sizes[0].price,
+            size: Sizes[0].size
         });
     }
-    changePrice(price) {
+    changePrice(price, size) {
         this.setState({
-            price: price
+            price: price,
+            size: size
         });
     }
     addOne() {
@@ -39,7 +42,7 @@ class ProductPage extends Component {
     render() {
         const sizes = Sizes.map((size, index) => {
             return (
-                <div key={index} className="size" onClick={() => this.changePrice(size.price)}>
+                <div key={index} className="size" onClick={() => this.changePrice(size.price, size.size)}>
                     <label htmlFor={size.size}>
                         <input type="radio" name="size" value={size.size} />
                         <span className="checkmark">{size.size}</span>
@@ -71,7 +74,7 @@ class ProductPage extends Component {
                     </div>
                 </div>
                 <div id="addToCart" onClick={() => {
-                    this.props.add(this.state.price, this.state.quantity, this.props.productName)
+                    this.props.add(this.state.price, this.state.quantity, this.props.productName, this.state.size)
                     }
                 }>
                     <span>ADD TO CART</span>

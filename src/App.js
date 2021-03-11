@@ -5,6 +5,7 @@ import Scents from './Scents';
 import './App.css';
 import ProductPage from './ProductPage';
 import ScentSelector from './ScentSelector';
+import Checkout from './Checkout';
 
 class App extends Component {
   constructor() {
@@ -26,13 +27,9 @@ componentDidMount() {
   })
 }
 
-addToCart(price, quantity, orderedScent) {
+addToCart(price, quantity, orderedScent, size) {
   this.setState(prevState => ({
-    cart: [...prevState.cart, {
-      quantityReq: quantity,
-      price: price,
-      orderedScent: orderedScent
-    }]
+    cart: [...prevState.cart, [ orderedScent, size, quantity, price ]]
   }))
   console.log(this.state.cart)
 }
@@ -80,6 +77,7 @@ OnTransitionEnd() {
   render() {
     return (
       <div className="App">
+        <Checkout order={this.state.cart}/>
         <ScentSelector handleClick={this.changeView}/>
         <Header toggleScents={this.toggleScents} />
         <ProductPage 

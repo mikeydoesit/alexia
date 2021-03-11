@@ -1,3 +1,7 @@
+@font-face {
+	font-family: Vogue;
+	src: url('/src/fonts/Vogue.ttf');
+  }
 @import url(https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Rozha+One&family=Oswald:wght@300;400&display=swap);
 * {
 	margin: 0;
@@ -57,6 +61,7 @@ header #center nav {
 	justify-content: space-around;
 	font-weight: 500;
 	font-size: .8rem;
+	font-family: 'Vogue', serif;
 	text-transform: uppercase;
 	letter-spacing: 1px
 }
@@ -189,13 +194,13 @@ header #center nav a {
 }
 
 #productPage #price {
-	margin-top: 3rem;
+	margin-top: 2rem;
 	font-size: 1.4rem;
 	font-family: 'Montserrat', sans-serif
 }
 
 #productPage #sizeSelector {
-	margin-top: 3rem;
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	font-family: 'Oswald', sans-serif;
@@ -259,7 +264,7 @@ header #center nav a {
 }
 
 #productPage #quantitySelector {
-	margin-top: 3rem;
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -285,7 +290,7 @@ header #center nav a {
 }
 
 #productPage #addToCart {
-	margin-top: 3rem;
+	margin-top: 2rem;
 	background-color: #000;
 	color: #fff;
 	padding: 14px 154px;
@@ -294,6 +299,32 @@ header #center nav a {
 	letter-spacing: 2px;
 	font-family: 'Oswald', sans-serif;
 	font-weight: 300
+}
+#checkoutWrapper {
+	padding: 1rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -45%) scale(0);
+	transition: 350ms ease-in-out;
+	z-index: 4;
+	height: 80%;
+	width: 80%;
+	backdrop-filter: blur(2rem);
+	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3));
+}
+#checkoutWrapper #checkout {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	background: linear-gradient(to left top, rgba(255, 255, 255, .1), rgba(255, 255, 255, .9));
+}
+#checkoutWrapper #checkout .orderWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 1rem;
+	background: linear-gradient(to left top, rgba(255, 255, 255, .1), rgba(255, 255, 255, .9));
 }
 
 .menu--visible {
