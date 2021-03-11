@@ -31,7 +31,7 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	color: #030d44;
+	color: #000000;
 	font-weight: 700;
 	padding: 14px 0;
 	animation: fade 3.5s linear
@@ -207,8 +207,8 @@ header #rightSide  {
 #productPage #productName {
 	font-size: 1.8em;
 	letter-spacing: 2px;
-	font-weight: 700;
-	font-family: 'Vogue', serif
+	font-weight: normal;
+	font-family: 'Vogue', serif;
 }
 
 #productPage #price {
