@@ -223,7 +223,11 @@ header #rightSide  {
 	flex-direction: column;
 	font-family: 'Oswald', sans-serif;
 	font-weight: 700;
-	align-items: center
+	align-items: center;
+	width: 50%;
+}
+#productPage #sizeSelector h5{
+	letter-spacing: 2px;
 }
 
 #productPage #sizeSelector #sizes {
@@ -289,6 +293,9 @@ header #rightSide  {
 	font-weight: 700;
 	font-family: 'Oswald', sans-serif;
 }
+#productPage #quantitySelector h5 {
+	letter-spacing: 2px;
+}
 
 #productPage #quantitySelector #quantity {
 	display: flex;
@@ -314,7 +321,8 @@ header #rightSide  {
 	margin-top: 2rem;
 	background-color: #000;
 	color: #fff;
-	padding: 14px 154px;
+	text-align: center;
+	padding: 14px 70px;
 	cursor: pointer;
 	font-size: .9rem;
 	letter-spacing: 2px;
@@ -322,6 +330,7 @@ header #rightSide  {
 	font-weight: 300;
 	user-select: none;
     -webkit-user-select: none;
+	width: 50%;
 }
 #checkoutWrapper {
 	padding: 1rem;
