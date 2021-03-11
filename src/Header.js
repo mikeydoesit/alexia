@@ -17,9 +17,7 @@ class Header extends Component {
           </div>
           <div id="center">
             <div id="logoWrapper">
-              <h1 id="logo">
-                Created By Alexia
-              </h1>
+              <img id="logo" src="images/new-logo.png" />
             </div>
             <nav>
               <a id="scentsHeader" onClick={this.props.toggleScents}>

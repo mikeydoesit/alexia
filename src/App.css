@@ -52,6 +52,13 @@ header #center #logoWrapper {
 	font-weight: 400;
 	font-family: 'Rozha One', serif
 }
+header #center #logoWrapper #logo{
+	padding-bottom: 14px;
+	width: 15em;
+	height: 15em;
+	object-fit: contain;
+	object-position: center;
+}
 
 header #center nav {
 	width: 100%;
