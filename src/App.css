@@ -208,7 +208,7 @@ header #rightSide  {
 	font-size: 1.8em;
 	letter-spacing: 2px;
 	font-weight: 700;
-	font-family: 'Rozha One', serif
+	font-family: 'Vogue', serif
 }
 
 #productPage #price {
@@ -286,7 +286,8 @@ header #rightSide  {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-weight: 700
+	font-weight: 700;
+	font-family: 'Oswald', sans-serif;
 }
 
 #productPage #quantitySelector #quantity {
@@ -317,6 +318,7 @@ header #rightSide  {
 	letter-spacing: 2px;
 	font-family: 'Oswald', sans-serif;
 	font-weight: 300
+	
 }
 #checkoutWrapper {
 	padding: 1rem;
