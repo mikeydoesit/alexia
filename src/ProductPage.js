@@ -9,10 +9,13 @@ class ProductPage extends Component {
         this.state = {
                 price: Sizes[0].price,
                 size: Sizes[0].size,
-                quantity: 0
+                quantity: 0,
+                selectedProduct: {},
+                isAdded: false
         }
         this.addOne = this.addOne.bind(this)
         this.subtractOne = this.subtractOne.bind(this)
+        this.addToCart = this.addToCart.bind(this)
     }
     componentDidMount() {
         this.setState({
@@ -26,6 +29,35 @@ class ProductPage extends Component {
             size: size
         });
     }
+    addToCart(image, name, price, quantity, size) {
+        this.setState(
+          {
+            selectedProduct: {
+              image: image,
+              name: name,
+              price: price,
+              quantity: quantity,
+              size: size
+            }
+          },
+          function() {
+            this.props.add(this.state.selectedProduct);
+          }
+        );
+        this.setState(
+          {
+            isAdded: true
+          },
+          function() {
+            setTimeout(() => {
+              this.setState({
+                isAdded: false,
+                selectedProduct: {}
+              });
+            }, 3500);
+          }
+        );
+      }
     addOne() {
         const counter = this.state.quantity;
         this.setState({
@@ -38,7 +70,6 @@ class ProductPage extends Component {
             quantity: counter - 1
         });
     }
-
     render() {
         const sizes = Sizes.map((size, index) => {
             return (
@@ -74,7 +105,7 @@ class ProductPage extends Component {
                     </div>
                 </div>
                 <div id="addToCart" onClick={() => {
-                    this.props.add(this.state.price, this.state.quantity, this.props.productName, this.state.size)
+                    this.addToCart(this.props.image, this.props.productName, this.state.price, this.state.quantity,  this.state.size)
                     }
                 }>
                     <span>ADD TO CART</span>

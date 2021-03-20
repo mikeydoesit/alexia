@@ -20,6 +20,7 @@ class App extends Component {
     this.toggleScents = this.toggleScents.bind(this)
     this.addToCart = this.addToCart.bind(this)
     this.deleteFromCart = this.deleteFromCart.bind(this)
+    this.checkProduct = this.checkProduct.bind(this)
   }
 componentDidMount() {
   this.setState({
@@ -27,11 +28,25 @@ componentDidMount() {
   })
 }
 
-addToCart(price, quantity, orderedScent, size) {
-  this.setState(prevState => ({
-    cart: [...prevState.cart, [ orderedScent, size, quantity, price ]]
-  }))
-  console.log(this.state.cart)
+addToCart(selectedProduct) {
+  let cartItem = this.state.cart;
+  let productID = `${selectedProduct.name} + ${selectedProduct.size}`;
+  let productQty = selectedProduct.quantity;
+  if (this.checkProduct(productID)) {
+    let index = cartItem.findIndex(x => `${x.name} + ${x.size}` == productID);
+    cartItem[index].quantity = Number(cartItem[index].quantity) + Number(productQty);
+    this.setState({
+      cart: cartItem
+    });
+  } else {
+    cartItem.push(selectedProduct);
+  }
+}
+checkProduct(productID) {
+  let cart = this.state.cart;
+  return cart.some(function(item) {
+    return `${item.name} + ${item.size}` === productID;
+  });
 }
 
 deleteFromCart(SKU, quantity) {
@@ -84,8 +99,8 @@ OnTransitionEnd() {
           bgdColor={this.state.currentScent.color}
           add={this.addToCart} 
           deleteFromCart={this.deleteFromCart} 
-          productName={this.state.currentScent.name} 
-          price={this.state.currentScent.price}
+          productName={this.state.currentScent.name}
+          image={this.state.currentScent.logoURL}
 
         />
         <Homepage 

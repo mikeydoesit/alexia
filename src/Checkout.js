@@ -14,13 +14,13 @@ class Checkout extends Component {
         return (
             <div id="checkoutWrapper">
                 <div id="checkout">
-                    {order.map((entry,i) => {
+                    {cart.map((entry,i) => {
                         return (
                             <div key={i} className="orderWrapper">
-                                <div>{entry[0]}</div>
-                                <div>{entry[1]}</div>
-                                <div>{entry[2]}</div>
-                                <div>{entry[3]}</div>
+                                <div>{entry.name}</div>
+                                <div>{entry.size}</div>
+                                <div>{entry.price}</div>
+                                <div>{entry.quantity}</div>
                                 <div>{"Quantity: " + sCart.filter(str => str === sArray[i]).length}</div>
                             </div>
 
