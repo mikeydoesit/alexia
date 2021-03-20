@@ -32,7 +32,7 @@ class Header extends Component {
           </div>
         <div id="rightSide">
           <FontAwesomeIcon icon={faSearch}/>
-          <FontAwesomeIcon icon={faShoppingCart}/>
+          <FontAwesomeIcon icon={faShoppingCart} onClick={this.props.toggleCart}/>
         </div>
         
       </header>

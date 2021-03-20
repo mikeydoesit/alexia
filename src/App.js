@@ -18,6 +18,7 @@ class App extends Component {
     this.OnTransitionEnd = this.OnTransitionEnd.bind(this)
     this.changeView = this.changeView.bind(this)
     this.toggleScents = this.toggleScents.bind(this)
+    this.toggleCart = this.toggleCart.bind(this)
     this.addToCart = this.addToCart.bind(this)
     this.deleteFromCart = this.deleteFromCart.bind(this)
     this.checkProduct = this.checkProduct.bind(this)
@@ -81,8 +82,17 @@ toggleScents() {
   } else {
     scentSelector.classList.add('active')
   }
-  
-  
+}
+toggleCart() {
+  const cart = document.getElementById("checkoutWrapper");
+  const cartLength = this.state.cart.length
+  if (cartLength > 0) {
+    if (cart.classList.contains('active')) {
+      cart.classList.remove('active')
+    } else {
+      cart.classList.add('active')
+    }
+  } 
 }
 OnTransitionEnd() {
   const productImage = document.getElementById('rightMain');
@@ -94,16 +104,15 @@ OnTransitionEnd() {
       <div className="App">
         <Checkout order={this.state.cart}/>
         <ScentSelector handleClick={this.changeView}/>
-        <Header toggleScents={this.toggleScents} />
+        <Header toggleScents={this.toggleScents} toggleCart={this.toggleCart} />
         <ProductPage 
           bgdColor={this.state.currentScent.color}
           add={this.addToCart} 
           deleteFromCart={this.deleteFromCart} 
           productName={this.state.currentScent.name}
           image={this.state.currentScent.logoURL}
-
         />
-        <Homepage 
+        <Homepage
           viewProductDetails={this.toggleProductDetails}
           background={this.state.currentScent.name} 
           handleTransitionEnd={this.OnTransitionEnd} 
