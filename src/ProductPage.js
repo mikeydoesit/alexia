@@ -66,9 +66,11 @@ class ProductPage extends Component {
     }
     subtractOne() {
         const counter = this.state.quantity;
-        this.setState({
-            quantity: counter - 1
-        });
+        if(counter > 0) {
+            this.setState({
+                quantity: counter - 1
+            });
+        }   
     }
     render() {
         const sizes = Sizes.map((size, index) => {
