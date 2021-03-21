@@ -105,7 +105,7 @@ header #rightSide .svg-inline--fa {
 	transform: translate(-50%, -45%) scale(0);
 	transition: 350ms ease-in-out;
 	z-index: 4;
-	height: 80%;
+	max-height: 80%;
 	width: 100%;
 	backdrop-filter: blur(2rem);
 	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3))
