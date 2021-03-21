@@ -7,9 +7,9 @@ class Checkout extends Component {
 
     render() {
         const cart = this.props.order;
-        const sCart = cart.map(JSON.stringify);
-        const set = new Set(sCart);
-        const sArray = Array.from(set);
+        // const sCart = cart.map(JSON.stringify);
+        // const set = new Set(sCart);
+        // const sArray = Array.from(set);
         // const order = sArray.map(JSON.parse);
         return (
             <div id="checkoutWrapper">
@@ -21,7 +21,7 @@ class Checkout extends Component {
                                 <div>{entry.size}</div>
                                 <div>{'$ ' + entry.price.toFixed(2)}</div>
                                 <div>{"Quantity: " + entry.quantity}</div>
-                                <div>{entry.price * entry.quantity}</div>
+                                <div>{'$ ' + (entry.price * entry.quantity).toFixed(2)}</div>
                                 {/* <div>{"Quantity: " + sCart.filter(str => str === sArray[i]).length}</div> */}
                             </div>
 

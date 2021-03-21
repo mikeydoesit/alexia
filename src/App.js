@@ -40,8 +40,12 @@ addToCart(selectedProduct) {
       cart: cartItem
     });
   } else {
-    cartItem.push(selectedProduct);
+    this.setState(prevState => ({
+      cart: [...prevState.cart, selectedProduct]
+    }))
+    // cartItem.push(selectedProduct);
   }
+  console.log(this.state.cart)
 }
 checkProduct(productID) {
   let cart = this.state.cart;

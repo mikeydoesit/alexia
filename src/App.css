@@ -204,7 +204,11 @@ header #rightSide .svg-inline--fa {
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
-	padding: 91px 28px 91px 28px
+	padding: 91px 28px 91px 28px;
+	background-size: 500% 400%;
+	-webkit-animation: gradientDance 25s ease infinite;
+    -moz-animation: gradientDance 25s ease infinite;
+    animation: gradientDance 25s ease infinite;
 }
 
 #productPage #productName {
@@ -396,4 +400,19 @@ header #rightSide .svg-inline--fa {
 	to {
 		transform: translateY(0)
 	}
+}
+@-webkit-keyframes gradientDance {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes gradientDance {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes gradientDance {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
