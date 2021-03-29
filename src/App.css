@@ -91,32 +91,69 @@ header #rightSide  {
 header #rightSide .svg-inline--fa {
 	cursor: pointer
 }
-
-#scents {
-	display: grid;
-	grid-gap: 1rem;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-	grid-auto-rows: minmax(75px, 1fr);
-	grid-auto-flow: dense;
-	padding: 1rem;
+#sidebarWrapper {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -45%) scale(0);
-	transition: 350ms ease-in-out;
 	z-index: 4;
-	max-height: 80%;
-	width: 100%;
+	background: transparent;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	width: 0;
+}
+#sidebarWrapper #sidebar {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: fit-content;
+	padding: 14px;
 	backdrop-filter: blur(2rem);
-	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3))
+	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3));
+}
+#sidebarWrapper #sidebar #icons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 100%;
+}
+#sidebarWrapper #sidebar #logo {
+	max-width: 40px;
+	height: fit-content;
+}
+#sidebarWrapper #sidebar .iconWrapper:nth-of-type(1) {
+	margin-top: 35px;
+}
+#sidebarWrapper #sidebar .iconWrapper {
+	padding: 3px 7px;
+	margin-top: 14px;
+}
+#sidebarWrapper #sidebar .iconWrapper .icon {
+	max-width: 35px;
 }
 
-#scents .scent img {
+#sidebarWrapper #scents {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: auto auto auto auto;
+	padding: 1rem;
+	transform: scale(0);
+	transform-origin: -100% -100%;
+	transition: 350ms ease-in-out;
+	z-index: 4;
+	height: 100vh;
+	backdrop-filter: blur(2rem);
+	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3));
+	opacity: 0;
+	left: 77px;
+	width: calc(50vw - 77px);
+	position: absolute;
+}
+
+#sidebarWrapper #scents .scent img {
 	max-width: 100%;
 	max-height: 100%
 }
 
-#scents .scent {
+#sidebarWrapper #scents .scent {
 	cursor: pointer;
 	max-width: 100%;
 	max-height: 100%;
@@ -206,9 +243,9 @@ header #rightSide .svg-inline--fa {
 	align-items: center;
 	padding: 91px 28px 91px 28px;
 	background-size: 500% 400%;
-	-webkit-animation: gradientDance 25s ease infinite;
-    -moz-animation: gradientDance 25s ease infinite;
-    animation: gradientDance 25s ease infinite;
+	-webkit-animation: gradientDance 30s ease infinite;
+    -moz-animation: gradientDance 30s ease infinite;
+    animation: gradientDance 30s ease infinite;
 }
 
 #productPage #productName {
@@ -374,32 +411,15 @@ header #rightSide .svg-inline--fa {
 	pointer-events: auto
 }
 
-#scents.active {
-	transform: translate(-50%, -45%) scale(1)
+#sidebarWrapper #scents.active {
+	transform: scale(1);
+	opacity: 1;
 }
 #checkoutWrapper.active {
 	transform: translate(-50%, -45%) scale(1)
 }
 #homepage .leftMain.active {
 	opacity: 1
-}
-
-@keyframes fade {
-	from {
-		opacity: 0
-	}
-	to {
-		opacity: 1
-	}
-}
-
-@keyframes slideDown {
-	from {
-		transform: translateY(-100%)
-	}
-	to {
-		transform: translateY(0)
-	}
 }
 @-webkit-keyframes gradientDance {
     0%{background-position:0% 50%}

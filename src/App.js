@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Header from './Header';
+// import Header from './Header';
 import Homepage from "./Homepage";
 import Scents from './Scents';
 import './App.css';
 import ProductPage from './ProductPage';
-import ScentSelector from './ScentSelector';
 import Checkout from './Checkout';
+import SideBar from './SideBar';
 
 class App extends Component {
   constructor() {
@@ -107,8 +107,10 @@ OnTransitionEnd() {
     return (
       <div className="App">
         <Checkout order={this.state.cart}/>
-        <ScentSelector handleClick={this.changeView}/>
-        <Header toggleScents={this.toggleScents} toggleCart={this.toggleCart} />
+        <SideBar  changeView={this.changeView} 
+                  toggleScents={this.toggleScents} 
+                  toggleCart={this.toggleCart} 
+        />
         <ProductPage 
           bgdColor={this.state.currentScent.color}
           add={this.addToCart} 

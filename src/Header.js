@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faShoppingCart, faInfoCircle, faVideo } from '@fortawesome/free-solid-svg-icons';
 
 
 class Header extends Component {
@@ -19,20 +19,16 @@ class Header extends Component {
           </div>
           <div id="center">
             <nav>
-              <a id="scentsHeader" onClick={this.props.toggleScents}>
+              <a id="scentsHeader">
                 Scents
-              </a>
-              <a>
-                Vlog
-              </a>
-              <a>
-                About
               </a>
             </nav>
           </div>
         <div id="rightSide">
+          <FontAwesomeIcon icon={faVideo}/>
           <FontAwesomeIcon icon={faSearch}/>
-          <FontAwesomeIcon icon={faShoppingCart} onClick={this.props.toggleCart}/>
+          <FontAwesomeIcon icon={faShoppingCart} />
+          <FontAwesomeIcon icon={faInfoCircle}/>
         </div>
         
       </header>
