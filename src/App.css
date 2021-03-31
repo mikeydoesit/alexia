@@ -2,7 +2,7 @@
 	font-family: Vogue;
 	src: url('/src/fonts/Vogue.ttf');
   }
-@import url(https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Rozha+One&family=Oswald:wght@300;400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Rozha+One&family=Oswald:wght@300;400&family=Benne&family=Buda:wght@300&family=Cardo&family=Cinzel&family=Cinzel+Decorative&family=Cormorant&family=Gilda+Display&family=Marcellus+SC&display=swap);
 * {
 	margin: 0;
 	padding: 0;
@@ -91,6 +91,34 @@ header #rightSide  {
 header #rightSide .svg-inline--fa {
 	cursor: pointer
 }
+#topbarWrapper {
+	position: absolute;
+	z-index: 4;
+	background: transparent;
+	width: calc(100vw - 77px);
+	display: flex;
+	flex-direction: row;
+	height: 0;
+	margin-left: 67px;
+}
+#topbarWrapper #topbar {
+	display: flex;
+	flex-direction: row;
+	height: 67px;
+	align-items: center;
+	width: 100%;
+	padding: 14px;
+	backdrop-filter: blur(2rem);
+	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3));
+}
+#topbarWrapper #topbar h1 {
+	font-family: 'Gilda Display', serif;
+	line-height: 1;
+	padding-left: 28px;
+	letter-spacing: 2px;
+	max-height: 40px;
+	text-transform: uppercase;
+}
 #sidebarWrapper {
 	position: absolute;
 	z-index: 4;
@@ -116,7 +144,7 @@ header #rightSide .svg-inline--fa {
 	max-width: 100%;
 }
 #sidebarWrapper #sidebar #logo {
-	max-width: 40px;
+	max-width: 35px;
 	height: fit-content;
 }
 #sidebarWrapper #sidebar .iconWrapper:nth-of-type(1) {
@@ -127,7 +155,7 @@ header #rightSide .svg-inline--fa {
 	margin-top: 14px;
 }
 #sidebarWrapper #sidebar .iconWrapper .icon {
-	max-width: 35px;
+	max-width: 30px;
 }
 
 #sidebarWrapper #scents {

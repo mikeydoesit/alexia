@@ -5,6 +5,7 @@ import Scents from './Scents';
 import './App.css';
 import ProductPage from './ProductPage';
 import Checkout from './Checkout';
+import TopBar from './TopBar';
 import SideBar from './SideBar';
 
 class App extends Component {
@@ -107,6 +108,7 @@ OnTransitionEnd() {
     return (
       <div className="App">
         <Checkout order={this.state.cart}/>
+        <TopBar />
         <SideBar  changeView={this.changeView} 
                   toggleScents={this.toggleScents} 
                   toggleCart={this.toggleCart} 
