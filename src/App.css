@@ -1,6 +1,6 @@
 @font-face {
-	font-family: Vogue;
-	src: url('/src/fonts/Vogue.ttf');
+	font-family: Caslim;
+	src: url('/src/fonts/Caslim.ttf');
   }
 @import url(https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&family=Rozha+One&family=Oswald:wght@300;400&family=Benne&family=Buda:wght@300&family=Cardo&family=Cinzel&family=Cinzel+Decorative&family=Cormorant&family=Gilda+Display&family=Marcellus+SC&display=swap);
 * {
@@ -72,7 +72,7 @@ header #center nav {
 	justify-content: space-around;
 	font-weight: 500;
 	font-size: 1.4rem;
-	font-family: 'Vogue', serif;
+	font-family: 'Caslim', serif;
 	text-transform: uppercase;
 	letter-spacing: 1px
 }
@@ -115,7 +115,7 @@ header #rightSide .svg-inline--fa {
 	font-family: 'Gilda Display', serif;
 	line-height: 1;
 	padding-left: 28px;
-	letter-spacing: 2px;
+	letter-spacing: 7px;
 	max-height: 40px;
 	text-transform: uppercase;
 }
@@ -280,7 +280,7 @@ header #rightSide .svg-inline--fa {
 	font-size: 1.8em;
 	letter-spacing: 2px;
 	font-weight: normal;
-	font-family: 'Vogue', serif;
+	font-family: 'Caslim', serif;
 }
 
 #productPage #price {
