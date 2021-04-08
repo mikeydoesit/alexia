@@ -91,34 +91,6 @@ header #rightSide  {
 header #rightSide .svg-inline--fa {
 	cursor: pointer
 }
-#topbarWrapper {
-	position: absolute;
-	z-index: 4;
-	background: transparent;
-	width: calc(100vw - 77px);
-	display: flex;
-	flex-direction: row;
-	height: 0;
-	margin-left: 67px;
-}
-#topbarWrapper #topbar {
-	display: flex;
-	flex-direction: row;
-	height: 67px;
-	align-items: center;
-	width: 100%;
-	padding: 14px;
-	backdrop-filter: blur(2rem);
-	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3));
-}
-#topbarWrapper #topbar h1 {
-	font-family: 'Gilda Display', serif;
-	line-height: 1;
-	padding-left: 28px;
-	letter-spacing: 7px;
-	max-height: 40px;
-	text-transform: uppercase;
-}
 #sidebarWrapper {
 	position: absolute;
 	z-index: 4;
