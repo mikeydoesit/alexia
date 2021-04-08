@@ -251,8 +251,10 @@ header #rightSide .svg-inline--fa {
 #productPage #productName {
 	font-size: 1.8em;
 	letter-spacing: 2px;
-	font-weight: normal;
+	font-weight: bold;
 	font-family: 'Caslim', serif;
+	text-align: center;
+	line-height: 1.3;
 }
 
 #productPage #price {

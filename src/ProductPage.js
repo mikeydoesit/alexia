@@ -85,7 +85,7 @@ class ProductPage extends Component {
         })
         return(
             <div id="productPage" style={{backgroundImage: this.props.bgdColor }}>
-                <h1 id="productName">{this.props.productName + ' - Soy Wax Melts'}</h1>
+                <h1 id="productName">{this.props.productName}<br/>Soy Wax Melts</h1>
                 <h4 id="price">{'$ ' + this.state.price.toFixed(2)}</h4>
                 <div id="sizeSelector">
                     <h5>SELECT SIZE</h5>
