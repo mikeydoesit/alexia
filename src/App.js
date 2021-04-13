@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Header from './Header';
+import Loader from './Loader';
 import Homepage from "./Homepage";
 import Scents from './Scents';
 import './App.css';
@@ -104,6 +104,13 @@ OnTransitionEnd() {
 }
 
   render() {
+    if (document.readyState !== 'complete') {
+      return ( 
+        <div>
+        <Loader />
+        </div>
+      )
+    }
     return (
       <div className="App">
         <Checkout order={this.state.cart}/>
