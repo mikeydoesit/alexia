@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Loader from './Loader';
 import Homepage from "./Homepage";
 import Scents from './Scents';
 import './App.css';
@@ -24,6 +23,8 @@ class App extends Component {
     this.checkProduct = this.checkProduct.bind(this)
   }
 componentDidMount() {
+  const loader = document.getElementById('loader');
+  loader.classList.add('fadeOut');
   this.setState({
     currentScent: Scents[Math.floor(Math.random() * 15)]
   })
@@ -104,19 +105,13 @@ OnTransitionEnd() {
 }
 
   render() {
-    if (document.readyState !== 'complete') {
-      return ( 
-        <div>
-        <Loader />
-        </div>
-      )
-    }
     return (
       <div className="App">
         <Checkout order={this.state.cart}/>
-        <SideBar  changeView={this.changeView} 
-                  toggleScents={this.toggleScents} 
-                  toggleCart={this.toggleCart} 
+        <SideBar  
+          changeView={this.changeView} 
+          toggleScents={this.toggleScents} 
+          toggleCart={this.toggleCart} 
         />
         <ProductPage 
           bgdColor={this.state.currentScent.color}
