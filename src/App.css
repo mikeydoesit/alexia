@@ -109,29 +109,34 @@ header #rightSide .svg-inline--fa {
 	display: flex;
 	flex-direction: row;
 	height: 100%;
-	width: fit-content;
-	padding: 14px;
+	width: 60px;
 	backdrop-filter: blur(2rem);
 	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3));
 }
 #sidebarWrapper #sidebar #icons {
 	display: flex;
 	flex-direction: column;
+	-webkit-box-align: center;
 	align-items: center;
-	max-width: 100%;
+}
+#sidebarWrapper #sidebar #logoWrapper {
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 #sidebarWrapper #sidebar #logo {
-	max-width: 35px;
-	height: fit-content;
+	
 }
 #sidebarWrapper #sidebar .iconWrapper:nth-of-type(1) {
-	margin-top: 35px;
+	margin-top: 5px;
 }
 #sidebarWrapper #sidebar .iconWrapper {
 	padding: 3px 7px;
 	margin-top: 14px;
 }
-#sidebarWrapper #sidebar .iconWrapper .icon {
+#sidebarWrapper #sidebar .iconWrapper span {
 	max-width: 30px;
 }
 
@@ -148,8 +153,8 @@ header #rightSide .svg-inline--fa {
 	backdrop-filter: blur(2rem);
 	background: linear-gradient(to right bottom, rgba(255, 255, 255, .7), rgba(255, 255, 255, .3));
 	opacity: 0;
-	left: 77px;
-	width: calc(50vw - 77px);
+	left: 60px;
+	width: calc(50vw - 60px);
 	position: absolute;
 }
 
